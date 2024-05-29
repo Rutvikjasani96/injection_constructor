@@ -2,18 +2,21 @@
 <beans xmlns="http://www.springframework.org/schema/beans"
        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
        xmlns:p="http://www.springframework.org/schema/p"
+       xmlns:c="http://www.springframework.org/schema/c"
        xsi:schemaLocation="http://www.springframework.org/schema/beans
        http://www.springframework.org/schema/beans/spring-beans.xsd">
 
     <!--    This is our bean-->
     <bean class="com.injecting_collection.Certificate" name="certificate">
-        <constructor-arg value="Rutvik Jasani Certi>"/>
+        <constructor-arg value="Rutvik Jasani Certi"/>
     </bean>
+
+    <bean class="com.injecting_collection.Certificate" name="certificatewithc" c:name="Rutvik Jasani Certi with c"/>
 
     <bean class="com.injecting_collection.Person" name="person">
         <constructor-arg value="01"/>
         <constructor-arg value="R Jasani"/>
-        <constructor-arg ref="certificate"/>
+        <constructor-arg ref="certificatewithc"/>
         <constructor-arg>
             <list>
                 <value>C</value>
